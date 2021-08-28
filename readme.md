@@ -1,0 +1,1 @@
+- Features that we wish Merchant OS Lightspeed Retail had.
