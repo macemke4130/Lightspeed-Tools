@@ -3,6 +3,56 @@
     padding: 0;
 }
 
-body {
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 1em;
+    border-bottom: dashed white 0.5em;
+
     background-color: black;
+    height: 25vh;
+}
+
+h1, h2, h3 {
+    font-family: monospace;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: unset;
+}
+
+p, label {
+    font-family: monospace;
+    text-align: center;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    width: 25em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+#print {
+    width: 5em;
+}
+
+#builder-output {
+    position: relative;
+    top: -1em;
 }

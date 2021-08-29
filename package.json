@@ -10,10 +10,12 @@
   "author": "Lucas Mace",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.8.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.5.1",
+    "jsbarcode": "^3.11.5",
     "nodemon": "^2.0.12"
   },
   "type": "module"

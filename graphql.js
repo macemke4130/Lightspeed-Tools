@@ -1,4 +1,6 @@
 import { buildSchema } from 'graphql';
+import JsBarcode, * as jsbarcode from 'jsbarcode';
+import { Canvas } from 'canvas';
 
 export const schema = buildSchema(`
   type Query {
@@ -8,7 +10,9 @@ export const schema = buildSchema(`
 
 export const root = {
     mood: () => {
-        return "Bicycles"
+        const canvas = new Canvas();
+        console.log(JsBarcode(canvas, "Hello"))
+        return "Barcode";
     }
 };
 

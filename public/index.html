@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Bicycle Builder Sticker</title>
 </head>
+
 <body>
-<h1>Bicycle Builder Sticker</h1>
+    <header>
+        <h1>Serialized Build Sticker</h1>
+        <h3>Built by Lucas Mace</h3>
+    </header>
+    <main>
+        <form id="controls">
+            <label>Bicycle Serial Number</label>
+            <input id="serial" type="text" onkeyup="generate()" />
+            <label>Builder</label>
+            <input id="builder-input" type="text" onkeyup="generate()" />
+            <input id="print" type="submit" value="Print" />
+        </form>
+        <section id="output">
+            <svg id="barcode"></svg>
+            <p id="builder-output"></p>
+        </section>
+    </main>
+    <script src="./JsBarcode.all.min.js"></script>
+    <script src="./app.js"></script>
 </body>
+
 </html>
