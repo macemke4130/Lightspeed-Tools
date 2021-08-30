@@ -12,14 +12,16 @@
 <body>
     <header>
         <h1>Serialized Build Sticker</h1>
+        <small>Version 0.9</small>
         <h3>Built by Lucas Mace</h3>
     </header>
     <main>
         <form id="controls">
             <label>Bicycle Serial Number</label>
-            <input id="serial" type="text" onkeyup="generate()" />
+            <input id="serial" type="text" autocomplete="off" onkeyup="generate()" />
             <label>Builder</label>
-            <input id="builder-input" type="text" onkeyup="generate()" />
+            <input id="builder-input" type="text" autocomplete="off" onkeyup="generate()" />
+            <label>Sticker will open in new window and close automatically, 10 seconds after printing.</label>
             <input id="print" type="submit" value="Print" />
         </form>
         <section id="output">

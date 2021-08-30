@@ -1,36 +1,59 @@
+console.log("Created by Lucas Mace");
+console.log("lucasmace4130@gmail.com");
+
 const mysvg = document.getElementById("barcode");
 let barcodePass;
 let builderPass;
 
+let serial = document.getElementById("serial");
+let builder = document.getElementById("builder-input");
+
 const generate = () => {
-    const serial = document.getElementById("serial").value;
-    let builder = document.getElementById("builder-input").value;
     let builderOutput = document.getElementById("builder-output");
 
-    if (serial != "") {
-        JsBarcode(mysvg, serial, {
+    if (serial.value != "") {
+        JsBarcode(mysvg, serial.value, {
             format: "code128",
             fontSize: 15,
             lineColor: "#00",
-            width: 2, // Width of smallest bar --
-            height: 75,
+            width: 1, 
+            height: 50,
             displayValue: true
         });
     }
 
-    if (builder != "") {
-        builder = builder.toUpperCase();
-        builderOutput.innerText = builder;
+    if (builder.value != "") {
+        builderOutput.innerText = builder.value.toUpperCase();
     }
 
     // Set Global Variables for printing --
-    barcodePass = serial;
-    builderPass = builder;
+    barcodePass = serial.value;
+    builderPass = builder.value;
 };
 
 const sendToPrint = (e) => {
     e.preventDefault();
-    window.location.href = `./sticker.html?barcode=${barcodePass}&builder=${builderPass}`;
+
+    const check = validate();
+    if (check === false) return;
+
+    window.open(`./sticker.html?barcode=${barcodePass}&builder=${builderPass}`, "_blank");
+}
+
+const validate = () => {
+    const required = [serial, builder];
+    const red = "5px solid red";
+    const reset = "1px solid black";
+
+    for (let i = 0; i < required.length; i++) {
+        if (required[i].value === "" || required[i].value === undefined) {
+            required[i].style.border = red;
+            return false;
+        } else {
+            required[i].style.border = reset;
+        }
+    }
+    return true;
 }
 
 document.getElementById("controls").onsubmit = sendToPrint;
