@@ -9,12 +9,12 @@ JsBarcode(mysvg, serial, {
     format: "code128",
     fontSize: 15,
     lineColor: "#00",
-    width: 1, 
-    height: 50,
+    width: 2, 
+    height: 45,
     displayValue: true
 });
 
-builderOutput.innerText = builder;
+builderOutput.innerText = builder.toUpperCase();
 
 window.print();
 
