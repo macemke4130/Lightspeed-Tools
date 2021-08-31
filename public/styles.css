@@ -64,6 +64,8 @@ input {
 }
 
 #print-container {
+    position: relative;
+    top: -1em;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
