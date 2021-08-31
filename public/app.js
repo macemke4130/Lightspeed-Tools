@@ -34,6 +34,8 @@ const generate = () => {
 const sendToPrint = (e) => {
     e.preventDefault();
 
+    if (builder.value === "") return;
+    
     const check = validate();
     if (check === false) return;
 

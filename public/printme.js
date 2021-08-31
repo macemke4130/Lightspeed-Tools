@@ -9,7 +9,7 @@ JsBarcode(mysvg, serial, {
     format: "code128",
     fontSize: 15,
     lineColor: "#00",
-    width: 2, 
+    width: 1.5, 
     height: 45,
     displayValue: true
 });
