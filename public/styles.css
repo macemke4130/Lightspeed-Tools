@@ -55,13 +55,14 @@ input {
 }
 
 #builder-output {
-    font-size: 1.5em;
+    font-size: 1.0em;
+    top: -0.7em;
     position: relative;
-    top: -0.8em;
 }
 
 #print-me {
     width: fit-content;
+    height: 5em;
 }
 
 #print-container {
