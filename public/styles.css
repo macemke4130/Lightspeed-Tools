@@ -62,13 +62,14 @@ input {
 
 #print-me {
     width: fit-content;
-    height: 5em;
 }
 
 #print-container {
     position: relative;
-    top: -1em;
+    top: -2em;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }

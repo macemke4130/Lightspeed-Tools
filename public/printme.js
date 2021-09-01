@@ -17,6 +17,6 @@ JsBarcode(mysvg, serial, {
 
 builderOutput.innerText = builder.toUpperCase();
 
-// window.print();
+window.print();
 
-// setTimeout(function(){ window.close(); }, 10000);
+setTimeout(function(){ window.close(); }, 10000);
