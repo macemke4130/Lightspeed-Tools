@@ -17,7 +17,7 @@ header {
 }
 
 h1, h2, h3, small {
-    font-family: monospace;
+    font-family: 'Inconsolata', monospace;;
     color: white;
 }
 
@@ -30,7 +30,7 @@ main {
 }
 
 p, label {
-    font-family: monospace;
+    font-family: 'Inconsolata', monospace;;
     text-align: center;
 }
 

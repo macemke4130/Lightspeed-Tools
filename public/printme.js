@@ -8,6 +8,7 @@ const builderOutput = document.getElementById("builder-output");
 JsBarcode(mysvg, serial, {
     format: "code128",
     fontSize: 16,
+    font: "'Inconsolata', monospace",
     lineColor: "#00",
     width: 1, 
     height: 30,
