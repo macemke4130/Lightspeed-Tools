@@ -40,6 +40,10 @@ const sendToPrint = (e) => {
     const check = validate();
     if (check === false) return;
 
+    builder.value = "";
+    serial.value = "";
+    serial.focus();
+
     window.open(`./sticker.html?barcode=${barcodePass}&builder=${builderPass}`, "_blank");
 }
 
