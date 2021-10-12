@@ -15,20 +15,24 @@
 <body>
     <header>
         <h1>Serialized Build Sticker</h1>
-        <small>Version 1.0</small>
+        <small>Version 1.1</small>
         <h3>Built by Lucas Mace</h3>
     </header>
     <main>
         <form id="controls">
             <label>Bicycle Serial Number</label>
             <input id="serial" type="text" autocomplete="off" onkeyup="generate()" />
+            <label>E-Bike Key Serial Number</label>
+            <input id="key" type="text" autocomplete="off" onkeyup="generate()" />
             <label>Builder</label>
             <input id="builder-input" type="text" autocomplete="off" onkeyup="generate()" />
             <label>Sticker will open in new window and close automatically, 10 seconds after printing.</label>
+            <label>Set Zebra Label Printer Margins to "None".</label>
             <input id="print" type="submit" value="Print" />
         </form>
         <section id="output">
-            <svg id="barcode"></svg>
+            <svg id="input-serial-barcode"></svg>
+            <svg id="input-key-barcode"></svg>
             <p id="builder-output"></p>
         </section>
     </main>

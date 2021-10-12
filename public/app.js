@@ -1,24 +1,40 @@
 console.log("Created by Lucas Mace");
 console.log("lucasmace4130@gmail.com");
 
-const mysvg = document.getElementById("barcode");
+const serialBarcode = document.getElementById("input-serial-barcode");
+const keyBarcode = document.getElementById("input-key-barcode");
+
 let barcodePass;
+let keyPass;
 let builderPass;
 
 let serial = document.getElementById("serial");
+let key = document.getElementById("key");
 let builder = document.getElementById("builder-input");
 
 const generate = () => {
     let builderOutput = document.getElementById("builder-output");
 
     if (serial.value != "") {
-        JsBarcode(mysvg, serial.value, {
+        JsBarcode(serialBarcode, serial.value, {
             format: "code128",
             fontSize: 15,
             font: "'Inconsolata', monospace",
             lineColor: "#00",
             width: 1, 
-            height: 50,
+            height: 25,
+            displayValue: true
+        });
+    }
+
+    if (key.value != "") {
+        JsBarcode(keyBarcode, key.value, {
+            format: "code128",
+            fontSize: 15,
+            font: "'Inconsolata', monospace",
+            lineColor: "#00",
+            width: 1, 
+            height: 25,
             displayValue: true
         });
     }
@@ -29,22 +45,27 @@ const generate = () => {
 
     // Set Global Variables for printing --
     barcodePass = serial.value;
+    keyPass = key.value ? key.value : null;
     builderPass = builder.value;
 };
 
 const sendToPrint = (e) => {
     e.preventDefault();
 
-    if (builder.value === "") return;
-
     const check = validate();
     if (check === false) return;
 
+    if (builder.value === "") return;
+
     builder.value = "";
+    key.value = "";
     serial.value = "";
+
+    // Needs logic for clearing SVGs --
+
     serial.focus();
 
-    window.open(`./sticker.html?barcode=${barcodePass}&builder=${builderPass}`, "_blank");
+    window.open(`./sticker.html?barcode=${barcodePass}&key=${keyPass}&builder=${builderPass}`, "_blank");
 }
 
 const validate = () => {

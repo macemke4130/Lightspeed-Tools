@@ -56,11 +56,19 @@ input {
 
 #builder-output {
     font-size: 1.0em;
-    top: -0.7em;
     position: relative;
 }
 
+#output {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
 #print-me {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
     width: fit-content;
 }
 
@@ -72,4 +80,38 @@ input {
     align-items: center;
     width: 100vw;
     height: 100vh;
+}
+
+#serial-barcode, #key-barcode {
+    margin: 0;
+    padding: 0;
+}
+
+#serial-barcode {
+    z-index: 1;
+}
+
+#key-barcode {
+    position: relative;
+    top: -1.2em;
+    z-index: 3;
+}
+
+#builder-output-sticker {
+    z-index: 3;
+    font-size: 1.0em;
+    top: 0.6em;
+    position: relative;
+}
+
+#serial-sticker {
+    z-index: 2;
+    position: relative;
+    bottom: -0.5em;
+}
+
+#key-sticker {
+    z-index: 4;
+    position: relative;
+    top: -0.6em;
 }

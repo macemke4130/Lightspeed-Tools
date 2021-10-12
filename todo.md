@@ -1,2 +1,0 @@
-- Add Serialized Key feild
-- Feilds should clear upon form submit for next sticker
