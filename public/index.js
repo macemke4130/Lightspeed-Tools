@@ -4,13 +4,11 @@ console.log("lucasmace4130@gmail.com");
 const serialBarcode = document.getElementById("input-serial-barcode");
 const keyBarcode = document.getElementById("input-key-barcode");
 
-let barcodePass;
-let keyPass;
-let builderPass;
+const serial = document.getElementById("serial-input");
+const bikeKey = document.getElementById("key-input");
+const builder = document.getElementById("builder-input");
 
-let serial = document.getElementById("serial");
-let key = document.getElementById("key");
-let builder = document.getElementById("builder-input");
+const clear = "";
 
 const generate = () => {
     let builderOutput = document.getElementById("builder-output");
@@ -27,8 +25,8 @@ const generate = () => {
         });
     }
 
-    if (key.value != "") {
-        JsBarcode(keyBarcode, key.value, {
+    if (bikeKey.value != "") {
+        JsBarcode(keyBarcode, bikeKey.value, {
             format: "code128",
             fontSize: 15,
             font: "'Inconsolata', monospace",
@@ -40,13 +38,8 @@ const generate = () => {
     }
 
     if (builder.value != "") {
-        builderOutput.innerText = builder.value.toUpperCase();
+        builderOutput.innerText = builder.value;
     }
-
-    // Set Global Variables for printing --
-    barcodePass = serial.value;
-    keyPass = key.value ? key.value : null;
-    builderPass = builder.value;
 };
 
 const sendToPrint = (e) => {
@@ -54,18 +47,19 @@ const sendToPrint = (e) => {
 
     const check = validate();
     if (check === false) return;
+    
+    localStorage.clear();
+    localStorage.setItem("serial", serial.value);
+    localStorage.setItem("bikeKey", (bikeKey.value != "") ? bikeKey.value : "null");
+    localStorage.setItem("builder", builder.value);
 
-    if (builder.value === "") return;
-
-    builder.value = "";
-    key.value = "";
-    serial.value = "";
-
-    // Needs logic for clearing SVGs --
+    builder.value = clear;
+    bikeKey.value = clear;
+    serial.value = clear;
 
     serial.focus();
 
-    window.open(`./sticker.html?barcode=${barcodePass}&key=${keyPass}&builder=${builderPass}`, "_blank");
+    window.open("./printBuildSticker.html", "_blank");
 }
 
 const validate = () => {

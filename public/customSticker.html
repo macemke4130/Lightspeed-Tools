@@ -9,36 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <title>Bicycle Builder Sticker</title>
+    <title>Custom Sticker</title>
 </head>
 
 <body>
     <header>
-        <h1>Serialized Build Sticker</h1>
+        <h1>Custom Sticker</h1>
         <small>Version 1.2</small>
         <h3>Built by Lucas Mace</h3>
-        <a href="./customSticker.html">Custom Sticker</a>
+        <a href="./">Build Sticker</a>
     </header>
     <main>
         <p><small class="black-text">Sticker will open in new window and close automatically, 10 seconds after printing.</small></p>
         <p class="margin-bottom"><small class="black-text">Set Zebra Label Printer Margins to "None".</small></p>
         <form id="controls">
-            <label>Bicycle Serial Number</label>
-            <input id="serial-input" type="text" autocomplete="off" onkeyup="generate()" />
-            <label>E-Bike Key Serial Number</label>
-            <input id="key-input" type="text" autocomplete="off" onkeyup="generate()" />
-            <label>Builder</label>
-            <input id="builder-input" type="text" autocomplete="off" onkeyup="generate()" />
+            <label>Title</label>
+            <input id="title" type="text" autocomplete="off" onkeyup="generate()" />
+            <label>Description</label>
+            <textarea id="body" cols="80" rows="10" onkeyup="generate()"></textarea>
             <input id="print" type="submit" value="Print" />
         </form>
-        <section id="output">
-            <svg id="input-serial-barcode"></svg>
-            <svg id="input-key-barcode"></svg>
-            <p id="builder-output"></p>
+        <section id="sticker-preview" class="margin-bottom">
+            <p id="title-preview"></p>
+            <p id="body-preview"></p>
         </section>
+        <p class="margin-bottom"><small class="black-text">Preview</small></p>
     </main>
     <script src="./JsBarcode.all.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="./customSticker.js"></script>
 </body>
 
 </html>

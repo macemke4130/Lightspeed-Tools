@@ -1,7 +1,8 @@
 import express from 'express';
 
-var app = express();
+const app = express();
 app.use(express.static('./public'));
 
-app.listen(process.env.PORT || 5000);
-console.log("1, 2, 3, Retail!");
+const port = 5000;
+app.listen(process.env.PORT || port);
+console.log("Listening at localhost:" + port);
