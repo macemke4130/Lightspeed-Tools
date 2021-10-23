@@ -7,5 +7,4 @@ titlePreview.innerText = title;
 bodyPreview.innerText = body;
 
 window.print();
-
 setTimeout(function(){ window.close(); }, 10000);

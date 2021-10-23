@@ -13,7 +13,7 @@ header {
     border-bottom: dashed white 0.5em;
 
     background-color: black;
-    height: 25vh;
+    height: 20vh;
 }
 
 h1, h2, h3, small, a {
@@ -57,9 +57,12 @@ input {
     border: 1px solid black;
 }
 
+textarea {
+    margin-bottom: 1em;
+}
+
 #print {
     width: 5em;
-    margin-top: 1em;
 }
 
 #builder-output {
@@ -99,13 +102,13 @@ input {
     height: 100vh;
 }
 
-#serial-barcode, #key-barcode {
+#serial-barcode, #key-barcode, #serial-preview-barcode, #bike-key-preview-barcode {
     margin: 0;
     padding: 0;
 }
 
 
-#builder-output-sticker {
+#builder-output-sticker, #builder-preview {
     text-transform: uppercase;
     font-size: 1.0em;
 }
@@ -123,7 +126,7 @@ input {
  
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 #title-preview {

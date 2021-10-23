@@ -10,8 +10,6 @@ const keySticker = document.getElementById("key-sticker");
 
 JsBarcode(serialBarcode, serial, {
     format: "code128",
-    fontSize: 16,
-    font: "'Inconsolata', monospace",
     margin: 0,
     lineColor: "#00",
     width: 1,
@@ -22,8 +20,6 @@ JsBarcode(serialBarcode, serial, {
 if (bikeKey != "null") {
     JsBarcode(keyBarcode, bikeKey, {
         format: "code128",
-        fontSize: 16,
-        font: "'Inconsolata', monospace",
         margin: 0,
         lineColor: "#00",
         width: 1,
