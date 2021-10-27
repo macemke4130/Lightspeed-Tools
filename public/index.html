@@ -28,12 +28,19 @@
             <input id="serial-input" type="text" autocomplete="off" onkeyup="generate()" />
             <label>E-Bike Key Serial Number</label>
             <input id="bike-key-input" type="text" autocomplete="off" onkeyup="generate()" />
+            <select id="tires-input" onchange="generate()">
+                <option value="none">Non-Tubeless Bicycle / Tubed Only</option>
+                <option value="orange">Orange Seal</option>
+                <option value="stan">Stan's</option>
+                <option value="tubed">Tubes inside Tubeless Bicycle</option>
+            </select>
             <label>Builder</label>
             <input id="builder-input" type="text" autocomplete="off" onkeyup="generate()" />
             <input id="print" type="submit" value="Print" />
         </form>
         <section id="sticker-preview">
             <p id="builder-preview"></p>
+            <p id="tires-preview"></p>
             <div class="barcode-group">
                 <p id="serial-preview-text"></p>
                 <svg id="serial-preview-barcode"></svg>

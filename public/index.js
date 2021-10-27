@@ -4,10 +4,12 @@ console.log("lucasmace4130@gmail.com");
 const serialInput = document.getElementById("serial-input");
 const bikeKeyInput = document.getElementById("bike-key-input");
 const builderInput = document.getElementById("builder-input");
+const tiresInput = document.getElementById("tires-input");
 
 const serialPreviewText = document.getElementById("serial-preview-text");
 const bikeKeyPreviewText = document.getElementById("bike-key-preview-text");
 const builderPreview = document.getElementById("builder-preview");
+const tiresPreview = document.getElementById("tires-preview");
 
 const serialPreviewBarcode = document.getElementById("serial-preview-barcode");
 const bikeKeyPreviewBarcode = document.getElementById("bike-key-preview-barcode");
@@ -49,6 +51,27 @@ const generate = () => {
         builderPreview.innerText = "BUILT BY " + builderInput.value;
     } else {
         builderPreview.innerText = clear;
+    }
+
+    if (tiresInput.value != "none") {
+        tiresPreview.style.display = "block";
+        switch (tiresInput.value) {
+            case "orange":
+                tiresPreview.innerText = "Orange Seal";
+                break;
+            case "stan":
+                tiresPreview.innerText = "Stan's";
+                break;
+            case "tubed":
+                tiresPreview.innerText = "Tubes";
+                break;
+            default:
+                break;
+        }
+        tiresPreview.innerText = tiresPreview.innerText + " Installed";
+    } else {
+        tiresPreview.style.display = "none";
+        tiresPreview.innerText = clear;
     }
 };
 
