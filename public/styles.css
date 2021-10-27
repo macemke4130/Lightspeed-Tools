@@ -108,6 +108,9 @@ textarea {
     padding: 0;
 }
 
+#tires-preview, #tires-sticker {
+    text-transform: uppercase;
+}
 
 #builder-output-sticker, #builder-preview {
     text-transform: uppercase;
