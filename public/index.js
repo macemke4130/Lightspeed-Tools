@@ -88,10 +88,12 @@ const sendToPrint = (e) => {
     localStorage.setItem("serial", serialInput.value);
     localStorage.setItem("bikeKey", (bikeKeyInput.value != "") ? bikeKeyInput.value : "null");
     localStorage.setItem("builder", builderInput.value);
+    localStorage.setItem("tires", (tiresInput.value != "") ? tiresPreview.innerText : "null");
 
     builderInput.value = clear;
     bikeKeyInput.value = clear;
     serialInput.value = clear;
+    tiresInput.value = "none";
 
     serialInput.focus();
     generate();
