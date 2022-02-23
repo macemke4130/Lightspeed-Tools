@@ -117,5 +117,31 @@ const validate = () => {
     return true;
 }
 
+const loadPrevious = () => {
+    serialInput.value = localStorage.getItem("serial");
+    bikeKeyInput.value = localStorage.getItem("bikeKey");
+    builderInput.value = localStorage.getItem("builder");
+
+    switch (localStorage.getItem("tires")) {
+        case "TUBES INSTALLED":
+            tiresInput.value = "tubed";
+            break;
+        case "ORANGE SEAL INSTALLED":
+            tiresInput.value = "orange";
+            break;
+        case "STAN'S INSTALLED":
+            tiresInput.value = "stan";
+            break;
+        case "":
+            tiresInput.value = "none";
+            break;
+
+        default:
+            break;
+    }
+    generate();
+}
+
 document.getElementById("controls").onsubmit = sendToPrint;
 document.getElementById("print").onclick = sendToPrint;
+document.getElementById("load-previous").onclick = loadPrevious;

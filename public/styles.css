@@ -17,7 +17,8 @@ header {
 }
 
 h1, h2, h3, small, a {
-    font-family: 'Inconsolata', monospace;;
+    font-family: 'Inconsolata', monospace;
+    ;
     color: white;
 }
 
@@ -50,7 +51,7 @@ p, label {
     text-align: center;
 }
 
-input {
+input, button {
     width: 25em;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -136,7 +137,8 @@ option {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0.2em 0.2em 0.5em black;
- 
+    margin-bottom: 1rem;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
