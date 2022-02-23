@@ -119,7 +119,7 @@ const validate = () => {
 
 const loadPrevious = () => {
     serialInput.value = localStorage.getItem("serial");
-    bikeKeyInput.value = localStorage.getItem("bikeKey");
+    bikeKeyInput.value = localStorage.getItem("bikeKey") === "null" ? "" : localStorage.getItem("bikeKey");
     builderInput.value = localStorage.getItem("builder");
 
     switch (localStorage.getItem("tires")) {
