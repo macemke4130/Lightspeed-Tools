@@ -84,12 +84,10 @@ const sendToPrint = (e) => {
         return;
     }
 
-    const builderName = builderInput.value;
-
     localStorage.clear();
     localStorage.setItem("serial", serialInput.value);
     localStorage.setItem("bikeKey", (bikeKeyInput.value != "") ? bikeKeyInput.value : "null");
-    localStorage.setItem("builder", builderName);
+    localStorage.setItem("builder", builderInput.value);
     localStorage.setItem("tires", (tiresInput.value != "") ? tiresPreview.innerText : "null");
 
     builderInput.value = clear;
@@ -100,7 +98,7 @@ const sendToPrint = (e) => {
     serialInput.focus();
     generate();
 
-    affirm(builderName);
+    window.open("./printBuildSticker.html", "_blank");
 }
 
 const validate = () => {
@@ -117,24 +115,6 @@ const validate = () => {
         }
     }
     return true;
-}
-
-const affirm = (builderName) => {
-    const adj = ["Wonderful", "Amazing", "Golden", "Radient", "Passionate", "Magnificent", "Excellent", "Heroic", "Marvelous", "Glorious", "Fantastic", "Amazeballs", "Superb", "Beautiful", "Handsome", "Charming", "Delightful"];
-    const noun = ["God", "Shining Star", "Soul", "Hero", "Superstar", "Lover", "Prophet", "Warrior", "Champion", "Conqueror"];
-
-    const randomAdj = Math.floor(Math.random() * adj.length);
-    const randomNoun = Math.floor(Math.random() * noun.length);
-
-    const theAdj = adj[randomAdj];
-    const theNoun = noun[randomNoun];
-
-    builderName = builderName.charAt(0).toUpperCase() + builderName.slice(1);
-
-    if (typeof builderName === "string") alert(`${builderName} is a ${theAdj} ${theNoun}.`);
-
-    window.open("./printBuildSticker.html", "_blank");
-
 }
 
 document.getElementById("controls").onsubmit = sendToPrint;
